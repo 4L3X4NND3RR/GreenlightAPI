@@ -22,7 +22,7 @@ confirm:
 ## run/api: run the cmd/api application
 .PHONY: run/api
 run/api:
-	go run ./cmd/api/ -db-dsn=${GREENLIGHT_DB_DSN}
+	go run ./app/cmd/api/ -db-dsn=${GREENLIGHT_DB_DSN}
 
 ## db/psql: connect to the database using psql
 .PHONY: db/psql
@@ -77,5 +77,4 @@ linker_flags = '-s -X main.buildTime=${current_time} -X main.version=${git_descr
 .PHONY: /build/api
 build/api:
 	@echo 'Building cmd/api...'
-	go build -ldflags=${linker_flags} -o=./bin/api ./cmd/api
-	GOOS=linux GOARCH=amd64 go build -ldflags=${linker_flags} -o=./bin/linux_amd64/api ./cmd/api
+	go build -ldflags=${linker_flags} -o=./bin/api ./app/cmd/api

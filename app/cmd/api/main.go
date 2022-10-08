@@ -13,9 +13,9 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
-	"greenlight.lionsoftware.com/internal/data"
-	"greenlight.lionsoftware.com/internal/jsonlog"
-	"greenlight.lionsoftware.com/internal/mailer"
+	"greenlight.lionsoftware.com/app/internal/data"
+	"greenlight.lionsoftware.com/app/internal/jsonlog"
+	"greenlight.lionsoftware.com/app/internal/mailer"
 )
 
 var (

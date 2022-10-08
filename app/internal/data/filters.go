@@ -4,7 +4,7 @@ import (
 	"math"
 	"strings"
 
-	"greenlight.lionsoftware.com/internal/validator"
+	"greenlight.lionsoftware.com/app/internal/validator"
 )
 
 type Filters struct {

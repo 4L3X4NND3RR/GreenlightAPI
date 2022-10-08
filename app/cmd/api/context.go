@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"greenlight.lionsoftware.com/internal/data"
+	"greenlight.lionsoftware.com/app/internal/data"
 )
 
 type contextKey string

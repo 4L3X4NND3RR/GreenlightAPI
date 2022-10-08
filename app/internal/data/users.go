@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"golang.org/x/crypto/bcrypt"
-	"greenlight.lionsoftware.com/internal/validator"
+	"greenlight.lionsoftware.com/app/internal/validator"
 )
 
 type UserModel struct {

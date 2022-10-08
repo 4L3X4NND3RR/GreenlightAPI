@@ -8,7 +8,7 @@ import (
 	"encoding/base32"
 	"time"
 
-	"greenlight.lionsoftware.com/internal/validator"
+	"greenlight.lionsoftware.com/app/internal/validator"
 )
 
 const (

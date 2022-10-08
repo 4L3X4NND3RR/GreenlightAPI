@@ -13,8 +13,8 @@ import (
 	"github.com/felixge/httpsnoop"
 	"github.com/tomasen/realip"
 	"golang.org/x/time/rate"
-	"greenlight.lionsoftware.com/internal/data"
-	"greenlight.lionsoftware.com/internal/validator"
+	"greenlight.lionsoftware.com/app/internal/data"
+	"greenlight.lionsoftware.com/app/internal/validator"
 )
 
 func (app *application) recoveriPanic(next http.Handler) http.Handler {
