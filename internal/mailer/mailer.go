@@ -9,7 +9,7 @@ import (
 	"github.com/go-mail/mail/v2"
 )
 
-//a variable with the type embed.FS (embedded file system) to hold
+// a variable with the type embed.FS (embedded file system) to hold
 // our email templates.
 
 //go:embed "templates"

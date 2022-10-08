@@ -25,8 +25,10 @@ type User struct {
 	Version   int       `json:"-"`
 }
 
-var AnonymousUser = &User{}
-var ErrDuplicateEmail = errors.New("duplicate email")
+var (
+	AnonymousUser     = &User{}
+	ErrDuplicateEmail = errors.New("duplicate email")
+)
 
 func (u *User) IsAnonimous() bool {
 	return u == AnonymousUser
@@ -80,7 +82,6 @@ func (m UserModel) GetByEmail(email string) (*User, error) {
 		&user.Activated,
 		&user.Version,
 	)
-
 	if err != nil {
 		switch {
 		case errors.Is(err, sql.ErrNoRows):

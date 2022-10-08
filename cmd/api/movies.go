@@ -42,7 +42,6 @@ func (app *application) listMoviesHandler(w http.ResponseWriter, r *http.Request
 	if err != nil {
 		app.serverErrorResponse(w, r, err)
 	}
-
 }
 
 // Add a createMovieHandler for the "POST /v1/movies" endpoint.

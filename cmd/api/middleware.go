@@ -100,7 +100,6 @@ func (app *application) rateLimit(next http.Handler) http.Handler {
 
 		next.ServeHTTP(w, r)
 	})
-
 }
 
 func (app *application) authenticate(next http.Handler) http.Handler {

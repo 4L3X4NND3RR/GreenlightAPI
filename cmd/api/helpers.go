@@ -42,7 +42,7 @@ func (app *application) writeJSON(w http.ResponseWriter, status int, data envelo
 	// Append a newline to make it easier to view in terminal applications.
 	js = append(js, '\n')
 
-	//We loop through the header map and add each header to the http.ResponseWriter header map.
+	// We loop through the header map and add each header to the http.ResponseWriter header map.
 	// Note that it's OK if the provided header map is nil. Go doesn't throw an error
 	// if you try to range over (or generally, read from) a nil map.
 	for key, value := range headers {

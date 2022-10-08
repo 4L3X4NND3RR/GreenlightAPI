@@ -26,7 +26,7 @@ type MovieModel struct {
 }
 
 func ValidateMovie(v *validator.Validator, movie *Movie) {
-	//This will add the provided key and error message to the errors map if the check does not evaluate to true.
+	// This will add the provided key and error message to the errors map if the check does not evaluate to true.
 	v.Check(movie.Title != "", "title", "must be provided")
 	v.Check(len(movie.Title) <= 500, "title", "must not be more than 500 bytes long")
 
@@ -80,7 +80,6 @@ func (m MovieModel) GetAll(title string, genres []string, filters Filters) ([]*M
 			pq.Array(&movie.Genres),
 			&movie.Version,
 		)
-
 		if err != nil {
 			return nil, Metadata{}, err
 		}
