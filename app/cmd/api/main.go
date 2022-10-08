@@ -12,6 +12,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/golang-migrate/migrate"
+	"github.com/golang-migrate/migrate/database/postgres"
+	_ "github.com/golang-migrate/migrate/source/file"
 	_ "github.com/lib/pq"
 	"greenlight.lionsoftware.com/app/internal/data"
 	"greenlight.lionsoftware.com/app/internal/jsonlog"
@@ -104,6 +107,21 @@ func main() {
 	defer db.Close()
 
 	logger.PrintInfo("database connection pool established", nil)
+
+	driver, err := postgres.WithInstance(db, &postgres.Config{})
+	if err != nil {
+		logger.PrintFatal(err, nil)
+	}
+	m, err := migrate.NewWithDatabaseInstance("file://migrations", "postgres", driver)
+	if err != nil {
+		logger.PrintFatal(err, nil)
+	}
+
+	if err = m.Up(); err != migrate.ErrNoChange {
+		logger.PrintFatal(err, nil)
+	}
+
+	logger.PrintInfo("database migrations executed", nil)
 
 	expvar.NewString("version").Set(version)
 

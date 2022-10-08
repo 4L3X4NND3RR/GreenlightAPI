@@ -16,6 +16,7 @@ RUN make build/api
 FROM gcr.io/distroless/base-debian10
 
 COPY --from=build /build/bin/api /app/api
+COPY ./migrations /migrations
 
 EXPOSE 8080
 
